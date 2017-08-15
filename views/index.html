@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>目录列表</title>
+	<style type="text/css">
+		body,html{
+			background-color:#eee;
+		}
+		.list-container{
+			padding:50px 20px;
+		}
+		.current-pathName{
+			margin-bottom: 20px;
+			color:#555;
+			font-size: 15px;
+			font-weight: bold;
+		}
+		.list-item{
+			display: block;
+			float: left;
+			width:30%;
+			cursor: pointer;
+			padding:5px 10px;
+			margin:0 10px;
+			color:#555;
+			text-decoration: none;
+		}
+		.list-item:hover{
+			background-color:#fff;
+		}
+	</style>
+</head>
+<body>
+<div class="list-container">
+	<div class="current-pathName">~{{pathName}}</div>
+	<a class="list-item" href="javascript:history.go(-1)">..</a>
+	{{each files fileItem}}
+	<a class="list-item" href="{{fileItem}}">{{fileItem}}</a>
+	{{/each}}
+</div>
+</body>
+</html>
